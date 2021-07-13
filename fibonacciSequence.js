@@ -21,35 +21,24 @@ F(N) = F(N - 1) + F(N - 2), 其中 N > 1.
 斐波那契数列：0,1,1,2,3,5,8,13,21....
 */
 //递归
-var fib = function(n) {
-    if (n===0) {
+var fib = function (n) {
+    if (n === 0) {
         return 0
-    } else if (n===1) {
+    } else if (n === 1) {
         return 1
     } else {
-        return fib(n-1)+fib(n-2)
+        return fib(n - 1) + fib(n - 2)
     }
 };
 //动态规划
-// var fibplus = function(n) {
-//     let memo = [];
-//     for(let i = 0; i <= n; i++ ) {
-//       if(i <= 1) {
-//         memo[i] = i%1000000007;
-//       }else {
-//         memo[i] = (memo[i-1] + memo[i-2])%1000000007;
-//       }
-//     }
-//     return memo[n];
-// }
-var fibplus = function(n) {
-  var arr = []
-  arr[0] = 0
-  arr[1] = 1
-  for(let i=2;i<n+1;i++) {
-      arr[i] = arr[i-1]+arr[i-2]
-  }
-  return arr[n]
+var fibplus = function (n) {
+    var arr = []
+    arr[0] = 0
+    arr[1] = 1
+    for (let i = 2; i < n + 1; i++) {
+        arr[i] = arr[i - 1] + arr[i - 2]
+    }
+    return arr[n]
 };
 let a = fibplus(6)
 console.log(a);

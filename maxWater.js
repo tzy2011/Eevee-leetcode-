@@ -47,11 +47,11 @@ var maxInAllArea = function (height) {
 /**
  * 雙指針法
  * 注：只要短边高度选定了，当时最大面积一定是短边坐标和边界的最大值，无论长边怎么移动都一定是面积缩小的
- *  */ 
+ *  */
 var maxArea = function (height) {
     var max = 0,
         i = 0,
-        j = height.length -1
+        j = height.length - 1
     while (i < j) {
         let minHeight = height[i] < height[j] ? height[i++] : height[j--]
         nowArea = minHeight * (j - i + 1)
